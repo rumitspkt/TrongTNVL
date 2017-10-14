@@ -7,9 +7,9 @@ import javax.swing.*;
 public class MachDien extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	
-	int x_pixel_kim1 = 736, y_pixel_kim1 = 150; //d 
-	int x_pixel_kim2 = 736, y_pixel_kim2 = 380;
-	int x_pixel_kim3 = 122, y_pixel_kim3 = 365;
+	int x_pixel__KimmA_ = 736, y_pixel__KimmA_ = 150; //d 
+	int x_pixel__KimV_ = 736, y_pixel__KimV_ = 380;
+	int x_pixel__KimA_ = 122, y_pixel__KimA_ = 365;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -17,19 +17,19 @@ public class MachDien extends JPanel implements ActionListener{
 		
 	}
 	
-	public void layThamSoKim1(int xPixel, int yPixel) {
-		this.x_pixel_kim1 = xPixel;
-		this.y_pixel_kim1 = yPixel;
+	public void layThamSo_KimmA_(int xPixel, int yPixel) {
+		this.x_pixel__KimmA_ = xPixel;
+		this.y_pixel__KimmA_ = yPixel;
 	}
 	
-	public void layThamSoKim2(int xPixel, int yPixel) {
-		this.x_pixel_kim2 = xPixel;
-		this.y_pixel_kim2 = yPixel;
+	public void layThamSo_KimV_(int xPixel, int yPixel) {
+		this.x_pixel__KimV_ = xPixel;
+		this.y_pixel__KimV_ = yPixel;
 	}
 	
-	public void layThamSoKim3(int xPixel, int yPixel) {
-		this.x_pixel_kim3 = xPixel;
-		this.y_pixel_kim3 = yPixel;
+	public void layThamSo_KimA_(int xPixel, int yPixel) {
+		this.x_pixel__KimA_ = xPixel;
+		this.y_pixel__KimA_ = yPixel;
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -44,7 +44,7 @@ public class MachDien extends JPanel implements ActionListener{
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.RED);
 		g2d.setStroke(new BasicStroke(3));	
-		g2d.drawLine(771, 150, x_pixel_kim1, y_pixel_kim1);
+		g2d.drawLine(771, 150, x_pixel__KimmA_, y_pixel__KimmA_);
 		g2d.setStroke(new BasicStroke());
 		g2d.fillOval(766, 145, 10, 10);
 	}
@@ -53,7 +53,7 @@ public class MachDien extends JPanel implements ActionListener{
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.RED);
 		g2d.setStroke(new BasicStroke(3));	
-		g2d.drawLine(771, 380, x_pixel_kim2, y_pixel_kim2);
+		g2d.drawLine(771, 380, x_pixel__KimV_, y_pixel__KimV_);
 		g2d.setStroke(new BasicStroke());
 		g2d.fillOval(766, 375, 10, 10);
 	}
@@ -62,7 +62,7 @@ public class MachDien extends JPanel implements ActionListener{
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.RED);
 		g2d.setStroke(new BasicStroke(3));
-		g2d.drawLine(151, 365, x_pixel_kim3, y_pixel_kim3);
+		g2d.drawLine(151, 365, x_pixel__KimA_, y_pixel__KimA_);
 		g2d.setStroke(new BasicStroke());
 		g2d.fillOval(146, 360, 10, 10);
 	}
