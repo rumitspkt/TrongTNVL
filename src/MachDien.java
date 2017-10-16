@@ -82,12 +82,12 @@ public class MachDien extends JPanel implements ActionListener{
 		g2d.drawLine(720, 150, 820, 150);
 		// g2d.drawA
 		g2d.drawArc(720, 100, 100, 100, 0, 180);
-		g2d.drawString("0,2", 715, 115);
-		g2d.drawString("0,4", 745, 100);
-		g2d.drawString("0,6", 785, 102);
-		g2d.drawString("0,8", 810, 120);
+		g2d.drawString("1", 715, 115);
+		g2d.drawString("2", 745, 100);
+		g2d.drawString("3", 785, 102);
+		g2d.drawString("4", 810, 120);
 		g2d.drawString("0", 715, 165);
-		g2d.drawString("1", 820, 165);
+		g2d.drawString("5", 820, 165);
 		String mA = "mA";
 		g2d.drawString(mA, 760, 170);
 		
