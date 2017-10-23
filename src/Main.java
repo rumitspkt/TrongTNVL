@@ -37,6 +37,11 @@ public class Main {
 		
 	}
 	
+	//electron bay bay
+	private static int soLuongE;
+	private static double tiLeECong;
+	private static double doCong;
+	private static double maxSpeed;
 	// </vatly>
 
 	static MachDien mach;
@@ -139,15 +144,15 @@ public class Main {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		mach = new MachDien();
-		JButton btn = new JButton("Click");
+		
 		// estEvent even = new TestEvent();
-		btn.setBounds(20, 10, 30, 30);
+		
 		frame.setResizable(false);
 		frame.setBounds(200, 0, 955, 730);
 		frame.setTitle("Thi nghiem 6");
 		mach.setLayout(null);
 		frame.add(mach);
-		mach.add(btn);
+	
 
 		Knob k1 = new Knob();
 		Knob k2 = new Knob();
@@ -225,8 +230,28 @@ public class Main {
 				
 			}
 		});
-		// </Label cho cac nut>
-		// </vat ly>
+		
+		JButton details = new JButton("Details");
+		details.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				soLuongE = (int) (U2*U3);
+				if(A2/10 <= 0) {
+					tiLeECong = 0;
+				}else if(A2/10 <= 4.7){
+					tiLeECong = 0.5 + A2/100;
+					doCong = 3.5 - A2/30;
+				}else {
+					tiLeECong = 1;
+					doCong = 1.3;
+				}
+				maxSpeed = 3;
+				new FrameElectron(soLuongE, tiLeECong, doCong);	
+			}
+		});
+		details.setBounds(425, 100, 80, 50);
+		mach.add(details);			
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
