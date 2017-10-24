@@ -23,7 +23,7 @@ public class bai2 extends JPanel implements ActionListener{
 	listOval liOval;
     Timer timer;
     Random rand=new Random();
-    public bai2(int soLuongE, double tiLeECong, double doCong)
+    public bai2(int soLuongE, double tiLeECong, double doCong, double maxSpeed)
     {
         this.setFocusable(true);
         this.setFocusTraversalKeysEnabled(false);
@@ -31,9 +31,10 @@ public class bai2 extends JPanel implements ActionListener{
       
 
         for(int i=0;i<soLuongE;i++)
-            liOval.addoval(new oval(rand.nextInt(100) + 325,rand.nextInt(100) + 225));
+            liOval.addoval(new oval(rand.nextInt(100) + 325,rand.nextInt(100) + 225, maxSpeed));
         liOval.tiLeECong = tiLeECong;
         liOval.doCong = doCong;
+        liOval.maxSpeed = maxSpeed;
         timer=new Timer(10,this);
         timer.start();
     }

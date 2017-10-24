@@ -239,15 +239,16 @@ public class Main {
 				soLuongE = (int) (U2*U3);
 				if(A2/10 <= 0) {
 					tiLeECong = 0;
+					maxSpeed = 6;
 				}else if(A2/10 <= 4.7){
 					tiLeECong = 0.5 + A2/100;
 					doCong = 3.5 - A2/30;
+					maxSpeed = 5 - A2/10;
 				}else {
 					tiLeECong = 1;
 					doCong = 1.3;
-				}
-				maxSpeed = 3;
-				new FrameElectron(soLuongE, tiLeECong, doCong);	
+				}			
+				new FrameElectron(soLuongE, tiLeECong, doCong, maxSpeed + 1);	
 			}
 		});
 		details.setBounds(425, 100, 80, 50);

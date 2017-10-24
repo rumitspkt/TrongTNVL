@@ -45,7 +45,7 @@ public class listOval extends JPanel{
             bkNgoai = (Math.pow(ov.x - 375, 2) + Math.pow(ov.y - 275, 2)) - (215 * 215);
             if(bkNgoai > 0) {
             	o.remove(ov);
-            	o.addFirst(new oval(rand.nextInt(100) + 325,rand.nextInt(100) + 225));
+            	o.addFirst(new oval(rand.nextInt(100) + 325,rand.nextInt(100) + 225, this.maxSpeed));
             	ov = o.get(0);
             }           
             bkTrong = (Math.pow(ov.x - 375, 2) + Math.pow(ov.y - 275, 2)) - (80 * 80);
@@ -55,7 +55,7 @@ public class listOval extends JPanel{
            
             if(bkTrong <= 0 && !ov.isFirstTime) {
             	o.remove(ov);
-            	o.addFirst(new oval(rand.nextInt(100) + 325,rand.nextInt(100) + 225));
+            	o.addFirst(new oval(rand.nextInt(100) + 325,rand.nextInt(100) + 225, this.maxSpeed));
             	
             }
             ov.move(doCong);        	           
@@ -67,7 +67,7 @@ public class listOval extends JPanel{
         	bkNgoai = (Math.pow(ov.x - 375, 2) + Math.pow(ov.y - 275, 2)) - (215 * 215);
             if(bkNgoai > 0) {
             	o.remove(ov);
-            	o.addLast(new oval(rand.nextInt(100) + 325,rand.nextInt(100) + 225));
+            	o.addLast(new oval(rand.nextInt(100) + 325,rand.nextInt(100) + 225, this.maxSpeed));
             	ov = o.get(length - 1);
             	//color = Color.red;
             }

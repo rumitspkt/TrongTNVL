@@ -23,13 +23,13 @@ public class oval {
     Random rand=new Random();
     double a=(rand.nextInt(360))*Math.PI / 180;
     double x,y;
-    double dx, dy;
-    double dx2=(rand.nextInt(3) + 1) * (rand.nextInt(2) == 1? 1 : -1),
-    		dy2=(rand.nextInt(3) + 1) * (rand.nextInt(2) == 1? 1 : -1); 
-    public  oval(double x,double y)
+    double dx, dy, dx2, dy2;
+    
+    public  oval(double x,double y, double maxSpeed)
     
     {
-        
+    	dx2=(rand.nextInt((int)maxSpeed) + 2) * (rand.nextInt(2) == 1? 1 : -1);
+        dy2=(rand.nextInt((int)maxSpeed) + 2) * (rand.nextInt(2) == 1? 1 : -1); 
         this.x=x;
         this.y=y;
     }
