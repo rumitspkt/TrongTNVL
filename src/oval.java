@@ -11,6 +11,8 @@ import java.awt.Graphics2D;
 
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
+
+import java.util.LinkedList;
 import java.util.Random;
 
 /**
@@ -18,7 +20,8 @@ import java.util.Random;
  * @author MyPC
  */
 public class oval {
-	Color colorOval;
+	//LinkedList<oval>Soval=new LinkedList<>();
+	Color colorOval = Color.blue;
 	boolean isFirstTime = true;
     Random rand=new Random();
     double a=(rand.nextInt(360))*Math.PI / 180;
@@ -43,7 +46,7 @@ public class oval {
     }
     public void move(double doCong)
     {
-    	this.colorOval = Color.red;
+    	//this.colorOval = Color.red;
     	dx=cos(a)*(doCong); 
     	dy=sin(a)*(doCong);  	
         x+=dx;
@@ -51,7 +54,7 @@ public class oval {
         a+=(1)*Math.PI / 180;       
     }   
     public void move2() {
-    	this.colorOval = Color.black;
+    	//this.colorOval = Color.black;
     	x+=dx2;
     	y+=dy2;
     }  

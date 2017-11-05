@@ -14,7 +14,7 @@ public class Main {
 	private static JLabel label_A, label_mA, label_V;
 	// <vat ly>
 	private static Timer timer_KimA_=new Timer(5,new ActionListener(){@Override public void actionPerformed(ActionEvent e){label_A.setText("I : "+(Math.round(A1/10*10.0)/10.0)+" A");if(A1<A2){_KimA_HienThi(A1+=0.025);}else if(A1>A2){_KimA_HienThi(A1-=0.025);}if(Math.abs(A1-A2)<0.0001){timer_KimA_.stop();}}});
-	private static Timer timer_KimmA_=new Timer(10,new ActionListener(){@Override public void actionPerformed(ActionEvent e){label_mA.setText("I : "+(Math.round(mA1/10*10.0)/10.0)+" mA");if(mA1<mA2){_KimmA_HienThi(mA1+=0.025);
+	private static Timer timer_KimmA_=new Timer(10,new ActionListener(){@Override public void actionPerformed(ActionEvent e){label_mA.setText("I : "+(Math.round(mA1/10*100.0)/100.0)+" mA");if(mA1<mA2){_KimmA_HienThi(mA1+=0.025);
 
 	}else if(mA1>mA2){_KimmA_HienThi(mA1-=0.025);
 	// System.out.println("mA1: " + mA1);
@@ -52,6 +52,7 @@ public class Main {
 	public static double BK_KimV_ = 35;
 	private static Graphics2D g2d;
 	public static double BK_KimA_ = 29.154759;
+	static Timer timer;
 
 	public static void _KimmA_HienThi(double mA) {
 
@@ -177,6 +178,9 @@ public class Main {
 		mach.add(label_A);
 		k1.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
+				if(U3 <= 0 || U2 <= 0) {
+					return;
+				}
 				Knob t = (Knob) e.getSource();
 
 				U1 = (int) (15 * t.getValue() * 10);
@@ -200,6 +204,9 @@ public class Main {
 		mach.add(label_mA);
 		k2.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
+				if(U3 <= 0) {
+					return;
+				}
 				Knob t = (Knob) e.getSource();
 				U2 = (int) (15 * t.getValue());
 				mA2 = U2 / R_loi * 10;
@@ -242,7 +249,7 @@ public class Main {
 					maxSpeed = 6;
 				}else if(A2/10 <= 4.7){
 					tiLeECong = 0.5 + A2/100;
-					doCong = 3.5 - A2/30;
+					doCong = 3.2 - A2/30;
 					maxSpeed = 5 - A2/10;
 				}else {
 					tiLeECong = 1;
